@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  background-color: #efefef;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.nav_menu {
+  position: relative;
+  /* background-color: red; */
+}
+
+.nav_menu::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 2px;
+  opacity: 0;
+  display: flex;
+  right: 0;
+  background-color: #fff;
+  transform-origin: center;
+  transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  transform: scaleX(0);
+}
+
+.nav_menu:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.scrollbar_hide::-webkit-scrollbar {
+  display: none;
+}
+
+.image_gallery_container {
+  transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+}
+
+@media (max-width: 600px) {
+  .videos-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 635px) {
+  .nav-img-container {
+    width: 150px;
+  }
+
+  .fa-bars-container {
+    top: 40px;
+  }
+
+  .banner-image-div {
+    height: 500px;
+  }
+}
+
+@media (max-width: 300px) {
+  .nav-img-container {
+    width: 100px;
+  }
+}
+
+/* for image gallery or for gallery image */
+@media (max-width: 770px) {
+  .image_gallery {
+    width: 300px;
+    margin-bottom: 8px;
+  }
+}
+
+/* for gallery details */
+@media (max-width: 970px) {
+  .gallery_detail_container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .hello {
+    margin: auto;
+  }
+
+  .description_container {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery_detail_img {
+    margin: auto;
+  }
+}
